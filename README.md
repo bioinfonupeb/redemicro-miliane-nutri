@@ -4,10 +4,10 @@
   
 <h2>Contributors</h2>
 <ul>
-  <li>Lauro Ângelo Gonçalves de Moraes</li>
-  <li>Miliane Martins de Andrade Fagundes</li>
-  <li>Karina Barbosa de Queiroz</li>
-  <li>Izinara Rosse da Cruz</li>
+  <li>Lauro Ângelo Gonçalves de Moraes <a href="#code-lauromoraes" title="Code">💻</a> <a href="#design-lauromoraes" title="Design">🎨</a> <a href="#maintenance-lauromoraes" title="Maintenance">🚧</a> - Lattes: http://lattes.cnpq.br/7273329679145458</li>
+  <li>Miliane Martins De Andrade Fagundes <a href="#research-miliane-fagundes" title="Research">🔬</a> <a href="#data-miliane-fagundes" title="Data">🔣</a> <a href="#ideas-miliane-fagundes" title="Ideas & Planning">🤔</a> - Lattes: http://lattes.cnpq.br/0684996082035459</li>
+  <li>Karina Barbosa de Queiroz <a href="#fundingFinding-karina-queiroz" title="Funding/Grant Finders">🔍</a> <a href="#ideas-karina-queiroz" title="Ideas & Planning">🤔</a> - Lattes: http://lattes.cnpq.br/3831721143385450</li>
+  <li>Izinara Rosse da Cruz <a href="#projectManagement-izinara-cruz" title="Project Management">📆</a> <a href="#ideas-izinara-cruz" title="Ideas & Planning">🤔</a> - Lattes: http://lattes.cnpq.br/4671130343607854</li>
 </ul>
 
 <h2>Project abstract</h2>
