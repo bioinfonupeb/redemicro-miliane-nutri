@@ -3,7 +3,7 @@
 
 # sed -i -e 's/\r$//' pipeline.sh # Correcao de command not found
 
-PARAMS=$1;
+PARAMS=$1; # Parameters file path
 ENV=$2; # Virtual Enviroment name or source path
 
 EXPERIMENT="${1##*/}";	# Remove prefix path
@@ -15,10 +15,11 @@ BASEURL="https://raw.githubusercontent.com/bioinfonupeb/redemicro-miliane-nutri/
 
 # Define pipeline steps
 STEPS=(
-	"step-01-prepare-data"
-	"step-02-dada2"
+	# "step-01-prepare-data"
+	# "step-02-dada2"
 	"step-metataxonomy"
-	"step-rarefaction-analysis"
+	# "step-rarefaction-analysis"
+	# "step-diversity-analysis"
 	);
 
 STEPSDIR="nb-steps"
