@@ -15,11 +15,11 @@ BASEURL="https://raw.githubusercontent.com/bioinfonupeb/redemicro-miliane-nutri/
 
 # Define pipeline steps
 STEPS=(
-	# "step-01-prepare-data"
-	# "step-02-dada2"
+	"step-01-prepare-data"
+	"step-02-dada2"
 	"step-metataxonomy"
-	# "step-rarefaction-analysis"
-	# "step-diversity-analysis"
+	"step-rarefaction-analysis"
+	"step-diversity-analysis"
 	);
 
 STEPSDIR="nb-steps"
@@ -28,10 +28,18 @@ if ! [ -d "$STEPSDIR" ]; then
   mkdir -p ${STEPSDIR};
 fi
 
+EXECUTEDDIR="${EXPERIMENTFOLDER}/nb-executed-steps"
+if ! [ -d "$EXECUTEDDIR" ]; then
+  echo "Creating directory: ${EXECUTEDDIR}";
+  mkdir -p ${EXECUTEDDIR};
+fi
+
 # Download utils.py file
 if ! [ -f "${STEPSDIR}/utils.py" ]; then
 	echo "Downloading: ${STEPSDIR}/utils.py";
 	wget "${BASEURL}/utils.py" -O "${STEPSDIR}/utils.py";
+	cp "${BASEURL}/utils.py" "${EXECUTEDDIR}/utils.py"
+	cp "${BASEURL}/utils.py" "."
 fi
 
 
@@ -43,12 +51,6 @@ fi
 
 if ! [ -f "${PARAMS}" ]; then
   cp "${1}" "${PARAMS}";
-fi
-
-EXECUTEDDIR="${EXPERIMENTFOLDER}/nb-executed-steps"
-if ! [ -d "$EXECUTEDDIR" ]; then
-  echo "Creating directory: ${EXECUTEDDIR}";
-  mkdir -p ${EXECUTEDDIR};
 fi
 
 
