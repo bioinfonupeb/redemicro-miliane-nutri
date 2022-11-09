@@ -15,11 +15,13 @@ BASEURL="https://raw.githubusercontent.com/lauromoraes/microbiom/main/nb-templat
 
 # Define pipeline steps
 STEPS=(
-	"step-prepare-data"
-	"step-quality-control"
-	"step-rarefaction-analysis"
-	"step-metataxonomy"
-	"step-diversity-analysis"
+	# "step-prepare-data"
+	# "step-quality-control"
+	# "step-rarefaction-analysis"
+	# "step-metataxonomy"
+	# "step-diversity-analysis"
+	# "step-abundance-analysis"
+	"step-picrust2-analysis"
 	);
 
 STEPSDIR="nb-templates"
@@ -53,6 +55,7 @@ fi
 echo "Processing parameters from: ${MYPARAMS}";
 
 # Activate virtual environment with all dependences
+source ~/anaconda3/etc/profile.d/conda.sh;
 conda activate ${ENV};
 
 # Execute each step
@@ -70,8 +73,20 @@ for i in "${!STEPS[@]}"; do
 	fi
 
 	# Execute notebook
-	echo ">>> Executing STEP file: ${STEPFILE} <<<";
-	papermill "${STEPFILE}" "${EXECUTEDFILE}" -f "${MYPARAMS}";
+	if [ "${STEPS[i]}" == "step-picrust2-analysis" ];then # Switch conda env
+		conda deactivate;
+		conda activate qiime2-2021.11
+		
+			echo ">>> Executing STEP file: ${STEPFILE} <<<";
+			papermill "${STEPFILE}" "${EXECUTEDFILE}" -f "${MYPARAMS}";
+
+		conda deactivate;
+		conda activate ${ENV};
+	else
+		echo ">>> Executing STEP file: ${STEPFILE} <<<";
+		papermill "${STEPFILE}" "${EXECUTEDFILE}" -f "${MYPARAMS}";
+	fi
+
 done
 
 # Deactivate the virtual environment
