@@ -3,7 +3,7 @@ base_dir: '/mnt/nupeb/rede-micro/redemicro-miliane-nutri'
 manifest_file: '/mnt/nupeb/rede-micro/redemicro-miliane-nutri/data/raw/manifest/miliane-manifest-CxAC.csv'
 metadata_file: '/mnt/nupeb/rede-micro/redemicro-miliane-nutri/data/raw/metadata/miliane-metadata-CxAC.tsv'
 class_col: 'group-id'
-classifier_file: '/mnt/nupeb/rede-micro/qiime2-classifiers/silva-138-99-nb-classifier.qza'
+classifier_file: '/mnt/nupeb/rede-micro/datasets/16S_classifiers_qiime2/silva-138-99-nb-classifier.qza'
 replace_files: False
 phred: 20
 trunc_f: 0
